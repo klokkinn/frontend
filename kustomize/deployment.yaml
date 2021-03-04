@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: klokkinn-frontend
+  namespace: klokkinn
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: klokkinn-frontend
+  template:
+    metadata:
+      labels:
+        app: klokkinn-frontend
+    spec:
+      containers:
+        - name: klokkinn-frontend
+          image: docker.pkg.github.com/klokkinn/klokkinn-frontend/klokkinn-frontend:0.0.1
+          env:
+            - name: BASE_URL
+              value: https://klokkinn.no
+      imagePullSecrets:
+        - name: julius-gpkg-token
+

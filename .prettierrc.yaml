@@ -1,0 +1,6 @@
+arrowParens: avoid
+useTabs: true
+semi: false
+singleQuote: true
+quoteProps: as-needed
+bracketSpacing: true

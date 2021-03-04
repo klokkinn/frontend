@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+
+metadata:
+  name: klokkinn-frontend
+  namespace: klokkinn
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+spec:
+  rules:
+    - host: klokkinn.no
+      http:
+        paths:
+          - backend:
+              serviceName: klokkinn-frontend
+              servicePort: 80
+            path: /
+  tls:
+    - hosts:
+        - klokkinn.no
+      secretName: klokkinn-frontend-tls
+

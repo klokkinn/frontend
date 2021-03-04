@@ -1,0 +1,41 @@
+$primary-color: #008080;
+$primary-color-accent: #009c9c;
+
+$primary-background-color: white;
+
+button.btn {
+  height: 48px;
+  width: 156px;
+
+  border: 2px solid $primary-color;
+  border-radius: 4px;
+
+  background: $primary-background-color;
+
+  cursor: pointer;
+
+  &.primary {
+    background-color: $primary-color;
+
+    color: $primary-background-color;
+
+    &:hover {
+      background-color: $primary-color-accent;
+      border-color: $primary-color-accent;
+    }
+
+    &:active {
+      background-color: #005e5e;
+      border-color: #005e5e;
+    }
+  }
+
+  &.secondary {
+    &:hover {
+      background-color: $primary-color;
+      border-color: $primary-color;
+
+      color: $primary-background-color;
+    }
+  }
+}
