@@ -12,8 +12,10 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: klokkinn-frontend
-              servicePort: 80
+              service:
+                name: klokkinn-frontend
+                port:
+                  number: 80
             path: /
   tls:
     - hosts:
