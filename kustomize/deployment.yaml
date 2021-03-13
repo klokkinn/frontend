@@ -21,6 +21,7 @@ spec:
           env:
             - name: BASE_URL
               value: https://klokkinn.no
-      imagePullSecrets:
-        - name: julius-gpkg-token
-
+            - name: VITE_GATEKEEPER_URL
+              value: https://gtk.klokkinn.no
+            - name: VITE_TIME_SERVICE_URL
+              value: https://gtk.klokkinn.no/api/time
