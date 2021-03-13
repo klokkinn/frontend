@@ -45,12 +45,12 @@ jobs:
       - name: Login to GitHub Packages Docker Registry
         uses: docker/login-action@v1
         with:
-          registry: docker.pkg.github.com
+          registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - run: echo "version=$(npm version patch | sed 's/^.//')" >> $GITHUB_ENV
-      - run: echo "image=docker.pkg.github.com/klokkinn/klokkinn-frontend/klokkinn-frontend" >> $GITHUB_ENV
+      - run: echo "image=ghcr.io/klokkinn/klokkinn-frontend" >> $GITHUB_ENV
 
       - name: Build and push Docker images
         run: docker build --tag ${{ env.image }}:${{ env.version }} .
