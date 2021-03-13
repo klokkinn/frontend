@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: klokkinn-frontend
-          image: ghcr.io/klokkinn/klokkinn-frontend:0.0.1
+          image: ghcr.io/klokkinn/klokkinn-frontend:0.0.2
           env:
             - name: BASE_URL
               value: https://klokkinn.no
